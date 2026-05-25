@@ -13,9 +13,9 @@ const displayFont = Sora({
 });
 
 export const metadata = {
-  title: "3D Developer Portfolio",
+  title: "Portfolio - Le Thanh Dat",
   description:
-    "A Next.js and Three.js developer portfolio inspired by the original 3D portfolio project.",
+    "I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!",
 };
 
 export default function RootLayout({ children }) {
