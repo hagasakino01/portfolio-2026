@@ -10,6 +10,7 @@ export default function SectionShell({
   description,
   centered = false,
   className = "",
+  viewport = { once: true, amount: 0.2 },
   children,
 }) {
   return (
@@ -17,7 +18,7 @@ export default function SectionShell({
       variants={staggerContainer(0.14, 0.08)}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={viewport}
       className={`relative mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-16 lg:py-24 ${className}`}
     >
       {id ? <span id={id} className="hash-anchor" /> : null}

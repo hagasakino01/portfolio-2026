@@ -34,8 +34,12 @@ export default function Navbar() {
             setToggle(false);
           }}
         >
-          <span className="grid h-11 w-11 place-items-center rounded-2xl border border-cyan-300/20 bg-white/5 shadow-soft">
-            <img src="/assets/logo.svg" alt="Logo" className="h-6 w-6 object-contain" />
+          <span className="grid h-11 w-11 shrink-0 place-items-center">
+            <img
+              src="/assets/logo-portfolio-cutout.png"
+              alt="LTD Portfolio logo"
+              className="h-11 w-11 object-contain drop-shadow-[0_10px_18px_rgba(8,15,30,0.38)]"
+            />
           </span>
           <div className="flex flex-col">
             <span className="font-display text-base font-semibold text-white sm:text-lg">

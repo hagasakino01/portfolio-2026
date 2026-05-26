@@ -4,12 +4,21 @@ import SectionShell from "@/components/section-shell";
 import { experiences } from "@/lib/content";
 import { fadeIn } from "@/lib/motion";
 
+const cardViewport = {
+  once: true,
+  amount: 0.35,
+  margin: "0px 0px -10% 0px",
+};
+
 function ExperienceCard({ experience, index }) {
   const isRight = index % 2 === 1;
 
   return (
     <motion.article
-      variants={fadeIn(isRight ? "left" : "right", "spring", index * 0.14, 0.76)}
+      variants={fadeIn(isRight ? "left" : "right", "tween", 0.05, 0.72)}
+      initial="hidden"
+      whileInView="show"
+      viewport={cardViewport}
       className={`relative pl-16 lg:w-[calc(50%-2rem)] ${
         isRight ? "lg:ml-auto lg:pl-16" : "lg:pr-16"
       }`}
@@ -59,6 +68,7 @@ export default function Experience() {
       title="Experience shaped by product work, motion, and frontend systems."
       description="A simplified timeline of roles that influenced how I approach UI quality, collaboration, and scalable frontend architecture."
       centered
+      viewport={{ once: true, amount: 0.15, margin: "0px 0px -18% 0px" }}
     >
       <div className="relative">
         <div className="absolute left-5 top-0 h-full w-px bg-gradient-to-b from-cyan-300/70 via-slate-500/30 to-transparent lg:left-1/2 lg:-translate-x-1/2" />
