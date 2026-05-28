@@ -6,7 +6,7 @@ import CanvasLoader from "@/components/canvas/canvas-loader";
 import { createSafePointerEvents } from "@/components/canvas/safe-events";
 
 function Computers({ isMobile }) {
-  const computer = useGLTF("/desktop_pc/scene.gltf");
+  const computer = useGLTF("/working_man/scene.glb");
 
   return (
     <mesh>
@@ -21,7 +21,7 @@ function Computers({ isMobile }) {
       <pointLight intensity={18} position={[2, 3, 3]} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.68 : 0.78}
+        scale={isMobile ? 0.82 : 0.98}
         position={isMobile ? [0, -3.1, -1.8] : [0, -3.3, -1.5]}
         rotation={[-0.02, -0.22, -0.08]}
       />
@@ -52,15 +52,15 @@ export default function ComputersCanvas() {
       frameloop="demand"
       shadows
       dpr={[1, 2]}
-      camera={{ position: [20, 3, 6], fov: 24 }}
+      camera={{ position: [24, 4, 8], fov: 24 }}
       gl={{ preserveDrawingBuffer: true, antialias: true }}
       className="!h-full !w-full"
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
-          enableZoom={false}
-          minPolarAngle={Math.PI / 2}
-          maxPolarAngle={Math.PI / 2}
+          enableZoom={true}
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI }
         />
         <Computers isMobile={isMobile} />
       </Suspense>
@@ -70,4 +70,4 @@ export default function ComputersCanvas() {
   );
 }
 
-useGLTF.preload("/desktop_pc/scene.gltf");
+useGLTF.preload("/working_man/scene.glb");

@@ -6,6 +6,7 @@ import { fadeIn } from "@/lib/motion";
 
 function ProjectCard({ project, index }) {
   const hasLiveDemo = Boolean(project.liveDemo && project.liveDemo !== "#");
+  const hasSourceCode = Boolean(project.sourceCode && project.sourceCode !== "#");
 
   return (
     <motion.article
@@ -21,15 +22,17 @@ function ProjectCard({ project, index }) {
 
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/15 to-transparent" />
 
-        <a
-          href={project.sourceCode}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`View source code for ${project.name}`}
-          className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-slate-950/75 backdrop-blur transition hover:border-cyan-200/40 hover:bg-slate-950"
-        >
-          <img src="/assets/github.png" alt="" className="h-5 w-5 object-contain" />
-        </a>
+        {hasSourceCode && (
+          <a
+            href={project.sourceCode}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`View source code for ${project.name}`}
+            className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-slate-950/75 backdrop-blur transition hover:border-cyan-200/40 hover:bg-slate-950"
+          >
+            <img src="/assets/github.png" alt="" className="h-5 w-5 object-contain" />
+          </a>
+        )}
       </div>
 
       <div className="p-6">
@@ -45,14 +48,7 @@ function ProjectCard({ project, index }) {
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href={project.sourceCode}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white transition hover:border-cyan-200/40 hover:bg-white/10"
-          >
-            Source
-          </a>
+         
           {hasLiveDemo ? (
             <a
               href={project.liveDemo}
@@ -79,7 +75,7 @@ export default function Works() {
       id="work"
       eyebrow="Selected Work"
       title="Projects that show how I structure interfaces and present products."
-      description="These cards follow the spirit of the original portfolio: strong visual presentation, clear stack tags, and quick access to source code or demos."
+      description="These cards follow the spirit of the original portfolio: strong visual presentation, clear stack tags."
     >
       <div className="grid gap-8 xl:grid-cols-3">
         {projects.map((project, index) => (

@@ -25,7 +25,7 @@ function ExperienceCard({ experience, index }) {
     >
       <div
         className={`absolute left-0 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-cyan-300/20 bg-slate-950 shadow-[0_0_0_10px_rgba(5,8,22,1)] ${
-          isRight ? "lg:left-[-3rem]" : "lg:left-auto lg:right-[-3rem]"
+          isRight ? "lg:left-[-3.375rem]" : "lg:left-auto lg:right-[-3.375rem]"
         }`}
       >
         <img
@@ -71,7 +71,7 @@ export default function Experience() {
       viewport={{ once: true, amount: 0.15, margin: "0px 0px -18% 0px" }}
     >
       <div className="relative">
-        <div className="absolute left-5 top-0 h-full w-px bg-gradient-to-b from-cyan-300/70 via-slate-500/30 to-transparent lg:left-1/2 lg:-translate-x-1/2" />
+        <div className="absolute left-[1.375rem] top-0 h-full w-px bg-gradient-to-b from-cyan-300/70 via-slate-500/30 to-transparent lg:left-1/2 lg:-translate-x-1/2" />
 
         <div className="space-y-10">
           {experiences.map((experience, index) => (

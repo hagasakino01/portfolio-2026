@@ -38,7 +38,7 @@ export default function PortfolioPage() {
 
       <footer className="relative z-10 border-t border-white/10 px-6 py-8 sm:px-10 lg:px-16">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-300 md:flex-row md:items-center md:justify-between">
-          <p>Built with Next.js, Tailwind CSS, React Three Fiber, and EmailJS.</p>
+          <p>hotline: (+84) 862 122 159 </p>
           <div className="flex flex-wrap gap-4">
             {socialLinks.map((item) => (
               <a
